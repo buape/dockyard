@@ -40,6 +40,7 @@ jobs:
             # Build and push with both latest and SHA tags
             docker buildx build \
               --file "$dockerfile" \
+              --platform linux/amd64,linux/arm64 \
               --push \
               --tag "ghcr.io/buape/dockyard-${name}:latest" \
               --tag "ghcr.io/buape/dockyard-${name}:${GITHUB_SHA}" \
