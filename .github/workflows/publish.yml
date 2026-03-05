@@ -30,7 +30,7 @@ jobs:
           echo "files=$(find ./images -type f -name "*.Dockerfile" | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Build and push Docker images
         run: |
